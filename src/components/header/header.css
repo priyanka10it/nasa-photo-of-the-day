@@ -48,7 +48,12 @@ table {
 	border-spacing: 0;
 }
 
-
+#nav{
+    font-family: "DM Mono";
+    color: white;
+    font-size: 20px;
+    display: flex;
+}
 
 .header-section{
     background-color: #333;
@@ -64,6 +69,6 @@ table {
     font-family: "DM Mono";
     color: white;
     font-size: 30px;
-   
+    
     
 }
