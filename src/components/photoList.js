@@ -1,17 +1,27 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import MovieCard from "./MovieCard";
+import PhotoCard from "./PhotoCard";
 
-const MovieList = () => {
+const PhotoList = () => {
+  /*
+  Convention: API requests should be captured in useEffect effect funtion and response
+  should be stored in state. This state variable will be set to a default value - often
+  times that's [] or "" or false, depending on the data being returned from the API. 
   
-  const [films, setFilms] = useState([]);
+  Since JSX is rendered BEFORE the effect fn is called, the default state value will 
+  render in the UI before the call to the API. If the call to the API takes awhile,
+  then we have a default view already shown and painted to the browser as our data
+  takes its time returning to our .then(). Once we update state with the values from
+  the API, (A STATE CHANGE) our component rerenders with that value, updating the JSX.
+  */
+  const [photos, setPhotos] = useState([]);
   useEffect(() => {
     axios
       .get("https://api.nasa.gov/planetary/apod?api_key=nBc60CjQCp0NmTe5dbp3rcreCA2T0kHStRg2sJGP")
       .then(response => {
         // reference setState fn
         console.log(response);
-        setFilms(response.data);
+        setPhotos(response.data);
       })
       .catch(error => console.log("Error!", error));
   }, []);
@@ -24,12 +34,12 @@ const MovieList = () => {
   */
 
   return (
-    <div className="film">
-      {films.map(film => (
-        <MovieCard key={film.id} film={film} propTwo={true} propThree={setFilms} />
+    <div className="photo">
+      
+        <PhotoCard/>
       ))}
     </div>
   );
 };
 
-export default MovieList;
+export default PhotoList;

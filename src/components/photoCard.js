@@ -2,10 +2,10 @@
 // Step 8 - Use passed props in MovieCard to render film data
 import React from "react";
 
-const MovieCard = props => {
+const PhotoCard = props => {
   // const film = props.film
   console.log(props);
-  const { film } = props;
+  const {photo } = props;
   /* Props --> "Properties of our component"
 
   There are a couple ways of accessing prop values. All are valid and you'll find different
@@ -18,16 +18,16 @@ const MovieCard = props => {
   */
 
   return (
-    <div className="film-list">
+    <div className="photo-list">
       {/* Use dot notation to get key/value from film since it's an object*/}
-      <h2>{film.title}</h2>
-      <p>{film.description}</p>
+      <h2>{photo.copyright}</h2>
+      <p>{photo.explanation}</p>
       <div className="bottom">
-        <p>{film.director}</p>
-        <p>{film.release_date}</p>
+        <p>{photo.director}</p>
+        <p>{photo.release_date}</p>
       </div>
     </div>
   );
 };
 
-export default MovieCard;
+export default PhotoCard;

@@ -1,6 +1,8 @@
 import React from "react";
 import logo from "./assets/logo.png";
 import "./App.css";
+import PhotoList from "./components/photoList";
+import "../index.css";
 
 function App() {
   return (
@@ -16,7 +18,7 @@ function App() {
       <h1>
       Astronomy Picture of the Day
       </h1>
-      
+      <PhotoList/>
     </div>
     </div>
   );
