@@ -1,19 +1,25 @@
 import React from "react";
-import "./postcontainer.css"
+import "./postcontainer.css";
+import { Card, CardFooter, CardBody,
+    CardTitle, CardText } from 'reactstrap';
 
 
 const PostContainer = props => {
     return (
-    <> <h2 className="title-heading">{props.title}</h2>
+        <div>
+            <Card body inverse style={{ backgroundColor: 'yellow', borderColor: '#333' }}></Card>
+    <h2 className="title-heading">{props.title}</h2>
     <img alt="" src={props.url} className="main-image"></img>
     
-    <h2 className="date-heading">{props.date}</h2>
-
-    <p className="explaination">{props.explanation}</p>
+    <Card body inverse color="yellow">
+    <CardTitle>{props.date}</CardTitle>
+    <CardBody>
+    <CardText>{props.explanation}</CardText>
     
-    <p className="copyright">Copyright: {props.copyright}</p>
-    </>
-
+    <CardFooter>copyright:{props.copyright}</CardFooter>
+    </CardBody>
+    </Card>
+</div>
     );
 };
 

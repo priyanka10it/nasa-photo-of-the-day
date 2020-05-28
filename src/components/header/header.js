@@ -1,17 +1,20 @@
-import "./header.css"
+/*import "./header.css"*/
 import React from "react"
+import styled from "styled-components";
+import { Nav,NavItem, NavLink } from 'reactstrap';
 
-const Header = () => {
+const Header = (props) => {
     return (
         <header className="header-section">
+          <div>
+            <Nav id="nav">
+             <NavLink href="#">HOME</NavLink> <NavLink href="#">ABOUT</NavLink> <NavLink href="#">CONTACT US</NavLink> <NavLink disabled href="#">SIGN-UP</NavLink>
+            </Nav>
+            </div>
+      
             <h1>Nasa Photo of The Day</h1>
-            <nav id="nav">
-                <a href="#">HOME</a>
-                <a href="#">ABOUT</a>
-                <a href="#">CONTACT US</a>
-                <a href="#">SIGN-UP</a>
-            </nav>
-        </header>
+      </header>      
+       
     )
 }
 
